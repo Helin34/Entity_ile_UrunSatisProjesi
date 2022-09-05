@@ -1,0 +1,1 @@
+﻿select sum(stok) from tblurunler

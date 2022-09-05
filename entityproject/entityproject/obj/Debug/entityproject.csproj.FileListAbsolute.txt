@@ -1,0 +1,17 @@
+C:\Users\helin\source\repos\entityproject\entityproject\bin\Debug\entityproject.exe.config
+C:\Users\helin\source\repos\entityproject\entityproject\bin\Debug\entityproject.exe
+C:\Users\helin\source\repos\entityproject\entityproject\bin\Debug\entityproject.pdb
+C:\Users\helin\source\repos\entityproject\entityproject\bin\Debug\EntityFramework.dll
+C:\Users\helin\source\repos\entityproject\entityproject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\helin\source\repos\entityproject\entityproject\bin\Debug\EntityFramework.xml
+C:\Users\helin\source\repos\entityproject\entityproject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\helin\source\repos\entityproject\entityproject\obj\Debug\entityproject.csproj.AssemblyReference.cache
+C:\Users\helin\source\repos\entityproject\entityproject\obj\Debug\entityproject.btnsil.resources
+C:\Users\helin\source\repos\entityproject\entityproject\obj\Debug\entityproject.FormUrunler.resources
+C:\Users\helin\source\repos\entityproject\entityproject\obj\Debug\entityproject.Properties.Resources.resources
+C:\Users\helin\source\repos\entityproject\entityproject\obj\Debug\entityproject.csproj.GenerateResource.cache
+C:\Users\helin\source\repos\entityproject\entityproject\obj\Debug\entityproject.csproj.CoreCompileInputs.cache
+C:\Users\helin\source\repos\entityproject\entityproject\obj\Debug\entityproject.csproj.CopyComplete
+C:\Users\helin\source\repos\entityproject\entityproject\obj\Debug\entityproject.exe
+C:\Users\helin\source\repos\entityproject\entityproject\obj\Debug\entityproject.pdb
+C:\Users\helin\source\repos\entityproject\entityproject\obj\Debug\entityproject.istatistik.resources

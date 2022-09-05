@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dburunModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbladmin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kullanici" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblkatogori">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblurunler" Relationship="Self.FK_tblurunler_tblkatogori" FromRole="tblkatogori" ToRole="tblurunler" />
+  </EntityType>
+  <EntityType Name="tblmusteri">
+    <Key>
+      <PropertyRef Name="MusteriID" />
+    </Key>
+    <Property Name="MusteriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sehir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bakiye" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblsatislar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Urun" Type="Int32" />
+    <Property Name="Musteri" Type="Int32" />
+    <Property Name="Adet" Type="Byte" />
+    <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Toplam" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblstoklar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Adet" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblurunler">
+    <Key>
+      <PropertyRef Name="UrunId" />
+    </Key>
+    <Property Name="UrunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urunAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stok" Type="Int16" />
+    <Property Name="Alisfiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="satisFiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Katogori" Type="Int32" />
+    <NavigationProperty Name="tblkatogori" Relationship="Self.FK_tblurunler_tblkatogori" FromRole="tblurunler" ToRole="tblkatogori" />
+  </EntityType>
+  <Association Name="FK_tblurunler_tblkatogori">
+    <End Role="tblkatogori" Type="Self.tblkatogori" Multiplicity="0..1" />
+    <End Role="tblurunler" Type="Self.tblurunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblkatogori">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblurunler">
+        <PropertyRef Name="Katogori" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dburunEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbladmin" EntityType="Self.tbladmin" />
+    <EntitySet Name="tblkatogori" EntityType="Self.tblkatogori" />
+    <EntitySet Name="tblmusteri" EntityType="Self.tblmusteri" />
+    <EntitySet Name="tblsatislar" EntityType="Self.tblsatislar" />
+    <EntitySet Name="tblstoklar" EntityType="Self.tblstoklar" />
+    <EntitySet Name="tblurunler" EntityType="Self.tblurunler" />
+    <AssociationSet Name="FK_tblurunler_tblkatogori" Association="Self.FK_tblurunler_tblkatogori">
+      <End Role="tblkatogori" EntitySet="tblkatogori" />
+      <End Role="tblurunler" EntitySet="tblurunler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
